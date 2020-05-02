@@ -15,14 +15,14 @@ int main(int argc, char **argv) {
     std::ifstream taskInFile;
     std::ofstream taskOutFile;
 
-    taskInFile.open("tasks.txt");
+    taskInFile.open(argv[1]);
     std::vector<TaskNode> tasks = TaskCollector::collect(taskInFile);
     taskInFile.close();
 
     PriorityAssignor::assign(tasks);
     tasks = TopologicalSorter::sort(tasks);
 
-    taskOutFile.open("tasks.txt");
+    taskOutFile.open(argv[1]);
     TaskExporter::exportTasks(tasks, taskOutFile);
     taskOutFile.close();
 
