@@ -1,0 +1,14 @@
+language: c++
+install: make cmake
+compiler:
+  - clang
+  - gcc
+os:
+  - linux
+  - osx
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ../
+  - make
