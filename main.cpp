@@ -16,15 +16,19 @@ int main(int argc, char **argv) {
     std::ofstream taskOutFile;
 
     taskInFile.open(argv[1]);
+
+    if (!taskInFile.is_open()) {
+        std::cerr << "File not found\n";
+        return 1;
+    }
+
     std::vector<TaskNode> tasks = TaskCollector::collect(taskInFile);
     taskInFile.close();
 
-    PriorityAssignor::assign(tasks);
+    PriorityAssignor::assign(tasks, std::cin, std::cout);
     tasks = TopologicalSorter::sort(tasks);
 
     taskOutFile.open(argv[1]);
     TaskExporter::exportTasks(tasks, taskOutFile);
     taskOutFile.close();
-
-    taskInFile.close();
 }
