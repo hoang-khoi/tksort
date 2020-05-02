@@ -7,7 +7,7 @@
 
 class PriorityAssignor {
 public:
-    static void assign(std::vector<TaskNode> &taskNodes);
+    static void assign(std::vector<TaskNode> &taskNodes, std::istream &in, std::ostream &out);
 };
 
 
