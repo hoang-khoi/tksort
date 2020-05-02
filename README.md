@@ -1,7 +1,7 @@
 # tksort
 [![Build Status](https://travis-ci.org/hoang-khoi/tksort.svg?branch=master)](https://travis-ci.org/hoang-khoi/tksort)
 
-A simple task prioritizer works on a simple algorithm. Here how it works:
+A simple task prioritizer based on topological sort algorithm. Here how it works:
 1. Dump your tasks to a text file, for example `personal_tasks.txt`
 2. Execute `tksort personal_tasks.txt`, the application now asks you for the priority of **each** pair of tasks.
 3. Answer the questions with `1` or `2` or anything else if you're not sure about it.
